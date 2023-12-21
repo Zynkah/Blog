@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <div className="sticky top-0 w-full bg-slate-600 p-2">
-      <NavigationMenu className="m-6 gap-16 text-lg">
+      <NavigationMenu className="m-6 md:gap-16 gap-4 text-lg">
         <NavigationMenuList className="hover:scale-110 hover:text-bold text-white">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink>Home</NavigationMenuLink>
