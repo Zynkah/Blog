@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArticleData } from "@/data/Article-Data";
+import { ArticleData } from "@/data/ArticleData";
 
 export default function ArticleCards() {
     return (
