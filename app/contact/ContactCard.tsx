@@ -23,12 +23,12 @@ export default function ContactCard() {
               LinkedIn
             </Link>
           </Button>
-                    <Button asChild className="m-auto hover:scale-110 hover:text-bold">
+          <Button asChild className="m-auto hover:scale-110 hover:text-bold">
             <Link href="https://github.com/Zynkah">GitHub</Link>
           </Button>
         </CardContent>
         <CardFooter className="justify-center">
-            I look forward to hearing from you!
+          I look forward to hearing from you!
         </CardFooter>
       </Card>
     </div>
