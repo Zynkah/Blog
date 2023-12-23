@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "drizzle-kit generate:pg"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
@@ -19,11 +20,15 @@
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "dotenv": "^16.3.1",
     "drizzle-orm": "^0.29.1",
     "lucide-react": "^0.299.0",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
     "nodemon": "^3.0.2",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3",
+    "psql": "^0.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.49.2",
@@ -41,6 +46,6 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5.3.3"
   }
 }
