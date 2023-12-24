@@ -19,7 +19,7 @@ import { Separator } from "@/components/ui/separator";
 export default function ArticleCards() {
   return (
     <div>
-      {ArticleData.article.map((article, index) => (
+      {ArticleData.map((article, index) => (
         <Card key={index} className="m-10">
           <CardHeader>
             <CardTitle className="text-3xl">{article.title}</CardTitle>
