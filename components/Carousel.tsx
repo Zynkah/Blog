@@ -12,7 +12,13 @@ import { Card, CardContent } from "./ui/card";
 
 export default function HomeCarousel() {
   return (
-    <Carousel className="w-full max-w-5xl m-auto">
+    <Carousel
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      className="w-full max-w-5xl m-auto"
+    >
       <CarouselContent className="-ml-1">
         {Array.from({ length: 6 }).map((_, index) => (
           <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
