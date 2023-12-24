@@ -1,5 +1,3 @@
-
-
 export const ArticleData = Object.freeze({
   article: [
     {
