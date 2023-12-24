@@ -1,5 +1,4 @@
-export const ArticleData = Object.freeze({
-  article: [
+export const ArticleData = [
     {
       title: "Title",
       description: "Description",
@@ -30,5 +29,4 @@ export const ArticleData = Object.freeze({
       content: "Content",
       footer: "Read more →",
     },
-  ],
-});
+  ];

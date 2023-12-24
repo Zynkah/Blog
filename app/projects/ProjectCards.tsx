@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function ProjectCards() {
   return (
     <div className="items-center justify-center grid">
-      {ProjectData.project.map((project, index) => (
+      {ProjectData.map((project, index) => (
         <Card key={index} className="m-6 md:w-[700px]">
           <CardHeader>
             <CardTitle>{project.title}</CardTitle>

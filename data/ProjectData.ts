@@ -1,5 +1,4 @@
-export const ProjectData = Object.freeze({
-  project: [
+export const ProjectData = [
     {
       title: "Portfolio",
       description:
@@ -25,5 +24,4 @@ export const ProjectData = Object.freeze({
       footer: "https://maid-cafe.vercel.app/",
       link: "https://maid-cafe.vercel.app/",
     },
-  ],
-});
+  ];
