@@ -28,6 +28,14 @@ export default function Navbar() {
 
         <NavigationMenuList>
           <NavigationMenuItem className="hover:scale-110 hover:text-bold text-white">
+            <Link href="/resources" legacyBehavior passHref>
+              <NavigationMenuLink>Resources</NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+
+        <NavigationMenuList>
+          <NavigationMenuItem className="hover:scale-110 hover:text-bold text-white">
             <Link href="/projects" legacyBehavior passHref>
               <NavigationMenuLink>Projects</NavigationMenuLink>
             </Link>
