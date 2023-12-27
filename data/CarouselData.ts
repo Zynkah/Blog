@@ -1,32 +1,22 @@
 export const CarouselData = [
   {
-    title: "title 1",
+    title: "Read My Articles",
     description: "description",
-    content: "content",
+    link: "/articles",
   },
   {
-    title: "title 2",
+    title: "Find Free Resources",
     description: "description",
-    content: "content",
+    link: "/resources",
   },
   {
-    title: "title 3",
+    title: "View My Projects",
     description: "description",
-    content: "content",
+    link: "/projects",
   },
   {
-    title: "title 4",
+    title: "Contact Me",
     description: "description",
-    content: "content",
-  },
-  {
-    title: "title 5",
-    description: "description",
-    content: "content",
-  },
-  {
-    title: "title 6",
-    description: "description",
-    content: "content",
+    link: "/contact",
   },
 ];
