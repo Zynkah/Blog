@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   Carousel,
@@ -11,9 +11,7 @@ import { CarouselData } from "@/data/CarouselData";
 import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 
-
 export default function HomeCarousel() {
-
   return (
     <div className="w-full max-w-5xl m-auto">
       <Carousel
@@ -29,16 +27,19 @@ export default function HomeCarousel() {
               className="pl-1 md:basis-1/2 lg:basis-1/3 text-center"
             >
               <Link href={CarouselData[index]?.link}>
-              <div className="p-1">
-                <Card className="hover:underline decoration-sky-500">
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <div className="h-[300px]">
-                      <h2 className="text-lg">{CarouselData[index]?.title}</h2>
-                      <p>{CarouselData[index]?.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div></Link>
+                <div className="p-1">
+                  <Card className="hover:underline decoration-sky-500">
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <div className="h-[300px]">
+                        <h2 className="text-lg">
+                          {CarouselData[index]?.title}
+                        </h2>
+                        <p>{CarouselData[index]?.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </Link>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -48,4 +49,3 @@ export default function HomeCarousel() {
     </div>
   );
 }
-
