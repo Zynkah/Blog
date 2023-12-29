@@ -11,9 +11,14 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { ResourceData } from "@/data/ResourceData";
 import Link from "next/link";
-
 
 export default function ResourceCards() {
   return (
@@ -22,7 +27,7 @@ export default function ResourceCards() {
         <ResizablePanelGroup
           key={index}
           direction="vertical"
-          className="min-h-[500px] min-w-[400px] rounded-lg border"
+          className="min-h-[600px] min-w-[400px] rounded-lg border"
         >
           <ResizablePanel defaultSize={25}>
             <div className="flex h-full items-center justify-center p-6">
@@ -48,7 +53,7 @@ export default function ResourceCards() {
                         ♡ Documentation
                       </Link>
                     </HoverCardTrigger>
-                    <HoverCardContent className="w-80">
+                    <HoverCardContent className="w-80 ml-10">
                       <div className="flex justify-between space-x-4">
                         <Avatar>
                           <AvatarImage src={resource.image} />
@@ -59,14 +64,15 @@ export default function ResourceCards() {
                             {resource.header}
                           </h4>
                           <p className="text-sm">
-                            Click here to be taken to the official documentation.
+                            Click here to be taken to the official
+                            documentation.
                           </p>
                         </div>
                       </div>
                     </HoverCardContent>
                   </HoverCard>
                 </li>
-                <li>
+                <li className="mt-3">
                   <Link
                     href={resource.tutorial}
                     target="blank"
@@ -76,13 +82,33 @@ export default function ResourceCards() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href={resource.course}
-                    target="blank"
-                    className="hover:underline decoration-sky-500"
-                  >
-                    ♡ Course
-                  </Link>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger className="hover:underline decoration-sky-500">
+                        ♡ Free Courses
+                      </AccordionTrigger>
+
+                      <AccordionContent>
+                        <ul>
+                          <li className="mb-2 hover:underline decoration-sky-500">
+                            <Link href={resource?.course_1} target="_blank">
+                              ✩ {resource.course_1_name}
+                            </Link>
+                          </li>
+                          <li className="mb-2 hover:underline decoration-sky-500">
+                            <Link href={resource?.course_2} target="_blank">
+                              ✩ {resource.course_2_name}
+                            </Link>
+                          </li>
+                          <li className="mb-2 hover:underline decoration-sky-500">
+                            <Link href={resource?.course_3} target="_blank">
+                              ✩ {resource.course_3_name}
+                            </Link>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </li>
               </ul>
             </div>
