@@ -3,20 +3,6 @@
   "dialect": "pg",
   "entries": [
     {
-      "idx": 0,
-      "version": "5",
-      "when": 1703292637934,
-      "tag": "0000_even_zaladane",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1703891909636,
-      "tag": "0001_groovy_micromax",
-      "breakpoints": true
-    },
-    {
       "idx": 2,
       "version": "5",
       "when": 1703893053530,
