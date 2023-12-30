@@ -12,7 +12,10 @@ export async function POST(req: NextRequest) {
     message: newUser.message
   };
 
-  const createUser = await db.insert(user).values(newUserObject).returning();
+  const createUser = await db
+  .insert(user)
+  .values(newUserObject)
+  .returning();
 
   return NextResponse.json({ user: createUser });
 }

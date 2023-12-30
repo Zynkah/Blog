@@ -36,7 +36,6 @@ export function ContactForm() {
       console.error("Error:", error);
     }
   };
-
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
