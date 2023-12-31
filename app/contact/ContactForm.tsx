@@ -15,7 +15,7 @@ export function ContactForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/guestbook", {
+      const res = await fetch("/api/post-guestbook", {
         method: "POST",
         body: JSON.stringify({
           username,
