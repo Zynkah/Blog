@@ -4,14 +4,12 @@ import { user } from "@/db/schema";
 
 export async function GET(req: NextRequest) {
   try {
-    const guestbookEntries = await db
-      .select()
-      .from(user)
-      .execute();
+const guestbookEntries = await db.select().from(user).execute();
 
-    return NextResponse.json({ guestbookEntries });
+return NextResponse.json({ guestbookEntries });
   } catch (error) {
     console.error("Error fetching guestbook entries:", error);
-    return NextResponse.error();
+    return NextResponse.json({ error: "Failed to fetch guestbook entries" });
   }
+
 }
