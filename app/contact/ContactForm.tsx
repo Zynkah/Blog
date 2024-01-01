@@ -28,13 +28,19 @@ export function ContactForm() {
       });
 
       if (res.ok) {
-        const data = await res.json();
         setAlert({ type: "success", message: "Your message has been added!" });
       } else {
-        console.error("Error:", res.status);
+        setAlert({
+          type: "failure",
+          message: "Something went wrong, please try again.",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
+      setAlert({
+        type: "failure",
+        message: "Something went wrong, please try again.",
+      });
     }
   };
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

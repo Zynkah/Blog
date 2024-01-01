@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
+import AlertMessage from "@/components/Alerts";
 
 interface Entries {
   username: string;
@@ -9,6 +12,7 @@ interface Entries {
 
 export default function GuestbookEntries() {
   const [entries, setEntries] = useState<Entries[]>([]);
+  const [alert, setAlert] = useState({ type: "", message: "" });
 
   useEffect(() => {
     async function fetchSurveyData() {
@@ -19,13 +23,22 @@ export default function GuestbookEntries() {
             const data = await response.json();
             setEntries(data.guestbookEntries);
           } catch (error) {
-            console.error("Error parsing JSON:", error);
+            setAlert({
+              type: "failure",
+              message: "Something went wrong, please try again.",
+            });
           }
         } else {
-          console.error("Failed to fetch guestbook data:", response.status);
+          setAlert({
+            type: "failure",
+            message: "Something went wrong, please try again.",
+          });
         }
       } catch (error) {
-        console.error("Error fetching guestbook data:", error);
+        setAlert({
+          type: "failure",
+          message: "Something went wrong, please try again.",
+        });
       }
     }
 
@@ -33,13 +46,18 @@ export default function GuestbookEntries() {
   }, []);
 
   return (
-    <div className="m-auto border rounded w-[700px] mt-5">
+    <ScrollArea className="m-auto border rounded h-[400px] w-[700px] mt-5">
       {entries.map((entry, index) => (
-        <div key={index} className="p-3 border">
-          <p className="text-lg">{entry.username}</p>
-          <p>{entry.message}</p>
-        </div>
+        <>
+          <div key={index} className="p-3">
+            <p className="text-lg">{entry.username}</p>
+            <p>{entry.message}</p>
+          </div>
+          <Separator className="my-2" />
+        </>
       ))}
-    </div>
+      {alert.type && <AlertMessage type={alert.type} message={alert.message} />}
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
   );
 }
