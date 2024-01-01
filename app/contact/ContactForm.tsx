@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import AlertMessage from "@/components/Alerts";
 
 export function ContactForm() {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
+  const [alert, setAlert] = useState({ type: "", message: "" });
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ export function ContactForm() {
 
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+        setAlert({ type: "success", message: "Your message has been added!" });
       } else {
         console.error("Error:", res.status);
       }
@@ -66,7 +68,9 @@ export function ContactForm() {
           placeholder="✶ Leave me a message ✶"
           className="cursor-text resize-y rounded carat-slate-400 opacity-50 focus:opacity-100"
         />
-
+        {alert.type && (
+          <AlertMessage type={alert.type} message={alert.message} />
+        )}
         <Button type="submit" className="hover:scale-110 hover:text-bold">
           Submit
         </Button>
