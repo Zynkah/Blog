@@ -19,12 +19,17 @@ export default function ContactCard() {
         </CardHeader>
         <CardContent className="grid grid-cols-2">
           <Button asChild className="m-auto hover:scale-110 hover:text-bold">
-            <Link href="https://www.linkedin.com/in/zena-creps-ba3631232/">
+            <Link
+              href="https://www.linkedin.com/in/zena-creps-ba3631232/"
+              target="_blank"
+            >
               LinkedIn
             </Link>
           </Button>
           <Button asChild className="m-auto hover:scale-110 hover:text-bold">
-            <Link href="https://github.com/Zynkah">GitHub</Link>
+            <Link href="https://github.com/Zynkah" target="_blank">
+              GitHub
+            </Link>
           </Button>
         </CardContent>
         <CardFooter className="justify-center">
