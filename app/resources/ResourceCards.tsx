@@ -27,7 +27,7 @@ export default function ResourceCards() {
         <ResizablePanelGroup
           key={index}
           direction="vertical"
-          className="min-h-[600px] min-w-[400px] rounded-lg border"
+          className="min-h-[600px] sm:min-w-[400px] rounded-lg border"
         >
           <ResizablePanel defaultSize={25}>
             <div className="flex h-full items-center justify-center p-6">
