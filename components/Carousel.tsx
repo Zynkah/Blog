@@ -48,7 +48,7 @@ export default function HomeCarousel() {
                       className={`hover:underline decoration-sky-500 ${
                         isActive
                           ? "scale-100 bg-slate-700"
-                          : "scale-90 blur-sm hover:blur-none"
+                          : "sm:scale-90 sm:blur-sm hover:blur-none"
                       }`}
                     >
                       <CardContent className="flex aspect-square items-center justify-center p-6">

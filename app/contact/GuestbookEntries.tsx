@@ -46,7 +46,7 @@ export default function GuestbookEntries() {
   }, []);
 
   return (
-    <ScrollArea className="m-auto border rounded h-[400px] w-[700px] mt-5">
+    <ScrollArea className="m-auto border rounded h-[400px] md:w-[700px] mt-5">
       {entries.map((entry, index) => (
         <>
           <div key={index} className="p-3">

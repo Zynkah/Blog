@@ -48,7 +48,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="m-auto p-4 rounded border items-center justify-center w-[700px]">
+    <div className="m-auto p-4 rounded border items-center justify-center md:w-[700px]">
       <h1 className="font-bold text-3xl text-center justify-center">
         Sign the guestbook
       </h1>
