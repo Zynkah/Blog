@@ -27,7 +27,7 @@ export default function HomeCarousel() {
   };
 
   return (
-    <div className="w-full max-w-5xl m-auto">
+    <div className="w-full m-auto">
       <Carousel
         opts={{
           align: "start",
@@ -47,12 +47,12 @@ export default function HomeCarousel() {
                     <Card
                       className={`hover:underline decoration-sky-500 ${
                         isActive
-                          ? "scale-100 bg-slate-700"
+                          ? "bg-slate-700"
                           : "sm:scale-90 sm:blur-sm hover:blur-none"
                       }`}
                     >
                       <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <div className="h-[300px]">
+                        <div className="h-[400px]">
                           <h2 className="text-lg">
                             {CarouselData[index]?.title}
                           </h2>
