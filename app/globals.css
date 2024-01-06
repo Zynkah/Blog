@@ -74,3 +74,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .mobile-nav-content {
+    display: none;
+  }
+
+  .mobile-nav-content.open {
+    display: block;
+  }
+
+  .mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+  }
+}
