@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import AlertMessage from "@/components/Alerts";
@@ -48,16 +48,18 @@ export default function GuestbookEntries() {
   return (
     <ScrollArea className="m-auto border rounded h-[400px] md:w-[700px] mt-5">
       {entries.map((entry, index) => (
-        <>
-          <div key={index} className="p-3">
+        <Fragment key={index}>
+          <div className="p-3">
             <p className="text-lg">{entry.username}</p>
             <p>{entry.message}</p>
           </div>
-          <Separator className="my-2" />
-        </>
+          <Separator key={`separator-${index}`} className="my-2" />
+        </Fragment>
       ))}
-      {alert.type && <AlertMessage type={alert.type} message={alert.message} />}
-      <ScrollBar orientation="horizontal" />
+      {alert.type && (
+        <AlertMessage key="alert" type={alert.type} message={alert.message} />
+      )}
+      <ScrollBar key="scrollBar" orientation="horizontal" />
     </ScrollArea>
   );
 }
