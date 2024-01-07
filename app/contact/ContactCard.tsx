@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function ContactCard() {
   return (
     <div className="items-center justify-center grid">
-      <Card className="m-6 md:w-[400px] text-center">
+      <Card className="md:w-[400px] text-center">
         <CardHeader>
           <CardTitle>Contact Card</CardTitle>
           <CardDescription>You can reach me at these links:</CardDescription>
