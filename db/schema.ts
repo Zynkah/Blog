@@ -6,3 +6,9 @@ export const user = pgTable("user", {
   message: text("message"),
 });
 
+export const article = pgTable("article", {
+  id: text("id").notNull().primaryKey(),
+  title: text("title"),
+  description: text("description"),
+  content: text("content"),
+});
