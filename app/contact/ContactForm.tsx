@@ -6,16 +6,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import AlertMessage from "@/components/Alerts";
+import ButtonLoading from "@/components/ui/submit-loading";
 
 export function ContactForm() {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [alert, setAlert] = useState({ type: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
+      setSubmitting(true);
+
       const res = await fetch("/api/post-guestbook", {
         method: "POST",
         body: JSON.stringify({
@@ -41,6 +45,8 @@ export function ContactForm() {
         type: "failure",
         message: "Something went wrong, please try again.",
       });
+    } finally {
+      setSubmitting(false);
     }
   };
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -78,7 +84,11 @@ export function ContactForm() {
           <AlertMessage type={alert.type} message={alert.message} />
         )}
         <Button type="submit" className="hover:scale-110 hover:text-bold">
-          Submit
+
+          {submitting ? (
+            <ButtonLoading /> ) : ('Submit')
+          }
+          
         </Button>
       </form>
     </div>
