@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import AlertMessage from "@/components/Alerts";
 import ButtonLoading from "@/components/ui/submit-loading";
+import BasicButton from "@/components/ui/basic-button";
 
 export function ContactForm() {
   const [username, setUsername] = useState("");
@@ -83,13 +83,13 @@ export function ContactForm() {
         {alert.type && (
           <AlertMessage type={alert.type} message={alert.message} />
         )}
-        <Button type="submit" className="hover:scale-110 hover:text-bold">
+        <BasicButton type="submit">
 
           {submitting ? (
             <ButtonLoading /> ) : ('Submit')
           }
           
-        </Button>
+        </BasicButton>
       </form>
     </div>
   );
