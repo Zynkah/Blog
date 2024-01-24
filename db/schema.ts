@@ -4,6 +4,8 @@ export const user = pgTable("user", {
   id: text("id").notNull().primaryKey(),
   username: text("username"),
   message: text("message"),
+  email: text("email"),
+  password: text("password"),
 });
 
 export const article = pgTable("article", {
