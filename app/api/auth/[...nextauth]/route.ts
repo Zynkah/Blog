@@ -1,5 +1,9 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { compare } from "bcrypt";
+import { user } from "@/db/schema";
+import { db } from "@/db";
+import { eq } from "drizzle-orm";
 
 const handler = NextAuth({
   providers: [
@@ -9,13 +13,12 @@ const handler = NextAuth({
         email: {},
         password: {},
       },
-      async authorize(credentials, req) {
-        const user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
-        if (user) {
-          return user;
-        } else {
-          return null
-        }
+
+      async authorize(credentials) {
+
+        
+        console.log({ credentials });
+        return null;
       },
     }),
   ],

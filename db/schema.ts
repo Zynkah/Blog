@@ -3,9 +3,13 @@ import { text, pgTable } from "drizzle-orm/pg-core";
 export const user = pgTable("user", {
   id: text("id").notNull().primaryKey(),
   username: text("username"),
-  message: text("message"),
   email: text("email"),
   password: text("password"),
+});
+
+export const guestbook = pgTable("guestbook", {
+  username: text("username"),
+  message: text("message"),
 });
 
 export const article = pgTable("article", {

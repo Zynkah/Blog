@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
-import { user } from "@/db/schema";
+import { guestbook } from "@/db/schema";
 import { nanoid } from "nanoid";
 
 export async function POST(req: NextRequest) {
@@ -12,8 +12,10 @@ export async function POST(req: NextRequest) {
     message: newUser.message
   };
 
+  console.log(newUserObject)
+
   const createUser = await db
-  .insert(user)
+  .insert(guestbook)
   .values(newUserObject)
   .returning();
 
