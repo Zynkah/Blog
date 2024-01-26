@@ -32,7 +32,6 @@ const handler = NextAuth({
           credentials?.password || "",
           users.password || ""
         );
-        console.log({ passwordCorrect });
 
         if (passwordCorrect) {
           return {

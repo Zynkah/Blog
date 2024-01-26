@@ -12,8 +12,6 @@ export async function POST(req: NextRequest) {
     message: newUser.message
   };
 
-  console.log(newUserObject)
-
   const createUser = await db
   .insert(guestbook)
   .values(newUserObject)
