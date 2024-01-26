@@ -8,8 +8,6 @@ import { nanoid } from "nanoid";
 export async function POST(req: NextRequest) {
   try {
     const { username, email, password } = await req.json();
-    
-    // console.log({ username, email, password });
 
     const hashedPassword = await hash(password, 10);
 
