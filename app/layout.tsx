@@ -28,7 +28,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           {!!session && (
-            <div className="grid grid-col-2 gap-2 justify-end text-right">
+            <div className="grid grid-col-2 gap-2 justify-end text-right mr-2">
               <Link href="/profile" legacyBehavior passHref>
                 {session?.user?.email}
               </Link>
@@ -40,7 +40,7 @@ export default async function RootLayout({
           )}
 
           {!session && (
-            <div className="grid grid-col-2 gap-2 justify-end text-right">
+            <div className="grid grid-col-2 gap-2 justify-end text-right mr-2">
               <Link href="/register" legacyBehavior passHref>
                 Register
               </Link>
