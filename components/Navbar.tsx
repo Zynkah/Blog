@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./theme-button";
 import { Button } from "./ui/button";
+// import LoggedIn from "./logged-in";
 
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -18,10 +19,10 @@ export default function Navbar() {
   return (
     <div className="sticky z-10 top-0 w-full bg-slate-600 p-2">
       <Button
-        className="bg-slate-600 hover:bg-slate-600 text-white sm:hidden"
+        className="bg-slate-600 hover:bg-slate-600 text-white md:hidden"
         onClick={() => setIsNavOpen(!isNavOpen)}
       >
-        <Menu />
+        <Menu size={40} />
       </Button>
 
       <NavigationMenu
@@ -58,17 +59,7 @@ export default function Navbar() {
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className="hover:scale-110 hover:text-bold text-white">
-            <Link href="/register" legacyBehavior passHref>
-              <NavigationMenuLink>Register</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem className="hover:scale-110 hover:text-bold text-white">
-            <Link href="/login" legacyBehavior passHref>
-              <NavigationMenuLink>Login</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+          {/* <LoggedIn /> */}
 
           <NavigationMenuList className="fixed md:top-6 top-2 right-1">
             <NavigationMenuItem>
