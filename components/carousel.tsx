@@ -12,6 +12,7 @@ import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function HomeCarousel() {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -34,7 +35,7 @@ export default function HomeCarousel() {
           loop: true,
         }}
       >
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="-ml-1 max-w-5xl">
           {Array.from({ length: 4 }).map((_, index) => {
             const isActive = index === activeIndex;
             return (
@@ -53,17 +54,19 @@ export default function HomeCarousel() {
                     >
                       <Image
                         src={CarouselData[index].image}
-                        width={400}
+                        width={700}
                         height={100}
                         alt="Picture of the author"
                         className="overflow-hidden rounded"
                       />
                       <CardContent className="flex aspect-square items-center justify-center">
                         <div className="h-[300px]">
-                          <h2 className="text-2xl my-2 font-bold">
+                          <h2 className="text-2xl mt-2 font-bold">
                             {CarouselData[index]?.title}
                           </h2>
-                          <p>{CarouselData[index]?.description}</p>
+                          <ScrollArea className="h-4/5 w-full p-4">
+                            <p>{CarouselData[index]?.description}</p>
+                          </ScrollArea>
                         </div>
                       </CardContent>
                     </Card>
