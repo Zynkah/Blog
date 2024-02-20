@@ -12,7 +12,7 @@ import BasicButton from "@/components/ui/basic-button";
 export default function ContactCard() {
   return (
     <div className="items-center justify-center grid">
-      <Card className="md:w-[400px] text-center">
+      <Card className="md:w-[400px] text-center border-none">
         <CardHeader>
           <CardTitle>Contact Card</CardTitle>
           <CardDescription>You can reach me at these links:</CardDescription>

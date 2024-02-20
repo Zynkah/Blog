@@ -11,7 +11,7 @@ import { CarouselData } from "@/data/CarouselData";
 import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 import { useState } from "react";
-
+import Image from "next/image";
 
 export default function HomeCarousel() {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -51,9 +51,16 @@ export default function HomeCarousel() {
                           : "sm:scale-90 sm:blur-sm hover:blur-none"
                       }`}
                     >
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <div className="h-[400px]">
-                          <h2 className="text-lg">
+                      <Image
+                        src={CarouselData[index].image}
+                        width={400}
+                        height={100}
+                        alt="Picture of the author"
+                        className="overflow-hidden rounded"
+                      />
+                      <CardContent className="flex aspect-square items-center justify-center">
+                        <div className="h-[300px]">
+                          <h2 className="text-2xl my-2 font-bold">
                             {CarouselData[index]?.title}
                           </h2>
                           <p>{CarouselData[index]?.description}</p>
