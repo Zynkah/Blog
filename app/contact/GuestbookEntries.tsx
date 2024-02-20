@@ -3,7 +3,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import AlertMessage from "@/components/Alerts";
+import AlertMessage from "@/components/alerts";
 
 interface Entries {
   username: string;

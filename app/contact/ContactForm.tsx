@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import AlertMessage from "@/components/Alerts";
+import AlertMessage from "@/components/alerts";
 import ButtonLoading from "@/components/ui/submit-loading";
 import BasicButton from "@/components/ui/basic-button";
 
@@ -84,11 +84,7 @@ export function ContactForm() {
           <AlertMessage type={alert.type} message={alert.message} />
         )}
         <BasicButton type="submit">
-
-          {submitting ? (
-            <ButtonLoading /> ) : ('Submit')
-          }
-          
+          {submitting ? <ButtonLoading /> : "Submit"}
         </BasicButton>
       </form>
     </div>
