@@ -58,9 +58,6 @@ export default function Navbar() {
               <NavigationMenuLink>Contact</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-
-          {/* <LoggedIn /> */}
-
           <NavigationMenuList className="fixed md:top-6 top-2 right-1">
             <NavigationMenuItem>
               <NavigationMenuLink>
