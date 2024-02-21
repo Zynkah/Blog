@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import AlertMessage from "@/components/alerts";
+import AlertMessage from "@/components/alert";
 import ButtonLoading from "@/components/ui/submit-loading";
 import BasicButton from "@/components/ui/basic-button";
 
