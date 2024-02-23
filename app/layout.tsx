@@ -22,14 +22,16 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <meta charSet="UTF-8" />
       </head>
       <body className={inter.className}>
-        <Navbar />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
+          <div className="items-center bg-inherit md:w-3/4 m-auto">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

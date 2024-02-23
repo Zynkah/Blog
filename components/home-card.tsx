@@ -9,7 +9,7 @@ import {
 
 export function HomeCard() {
   return (
-    <Card className="max-w-5xl">
+    <Card>
       <CardHeader>
         <CardTitle>Coding Blog</CardTitle>
         <CardDescription>Learn to code with me!</CardDescription>
