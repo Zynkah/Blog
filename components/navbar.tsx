@@ -17,7 +17,7 @@ export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="sticky z-10 top-0 w-full bg-slate-600 p-2">
+    <div className="sticky z-20 top-0 w-full bg-slate-600 p-2">
       <Button
         className="bg-slate-600 hover:bg-slate-600 text-white md:hidden"
         onClick={() => setIsNavOpen(!isNavOpen)}
