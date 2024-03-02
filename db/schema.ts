@@ -18,3 +18,18 @@ export const article = pgTable("article", {
   description: text("description"),
   content: text("content"),
 });
+
+export const resources = pgTable("resource", {
+  id: text("id").notNull().primaryKey(),
+  header: text("header"),
+  content: text("content"),
+  docs: text("docs"),
+  tutorial: text("tutorial"),
+  course_1: text("course_1"),
+  course_1_name: text("course_name_1"),
+  course_2: text("course_2"),
+  course_2_name: text("course_name_2"),
+  course_3: text("course_3"),
+  course_3_name: text("course_name_3"),
+  image: text("image"),
+});
