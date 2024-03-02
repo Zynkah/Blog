@@ -52,12 +52,6 @@ export default function Navbar() {
               <NavigationMenuLink>Projects</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-
-          <NavigationMenuItem className="hover:scale-110 hover:text-bold text-white">
-            <Link href="/contact" legacyBehavior passHref>
-              <NavigationMenuLink>Contact</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
           <NavigationMenuList className="fixed md:top-6 top-2 right-1">
             <NavigationMenuItem>
               <NavigationMenuLink>

@@ -1,0 +1,131 @@
+{
+  "id": "f7ba9030-0a77-41e6-991b-2a5da173cd2f",
+  "prevId": "f68dd465-1774-4cdb-968f-3d427caad865",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "article": {
+      "name": "article",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "resource": {
+      "name": "resource",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "header": {
+          "name": "header",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "docs": {
+          "name": "docs",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tutorial": {
+          "name": "tutorial",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_1": {
+          "name": "course_1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_name_1": {
+          "name": "course_name_1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_2": {
+          "name": "course_2",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_name_2": {
+          "name": "course_name_2",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_3": {
+          "name": "course_3",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_name_3": {
+          "name": "course_name_3",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "image": {
+          "name": "image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
