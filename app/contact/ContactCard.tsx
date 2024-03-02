@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import BasicButton from "@/components/ui/basic-button";
+
 
 export default function ContactCard() {
   return (
@@ -18,19 +19,19 @@ export default function ContactCard() {
           <CardDescription>You can reach me at these links:</CardDescription>
         </CardHeader>
         <CardContent className="grid grid-cols-2">
-          <BasicButton asChild>
+          <Button asChild>
             <Link
               href="https://www.linkedin.com/in/zena-creps-ba3631232/"
               target="_blank"
             >
               LinkedIn
             </Link>
-          </BasicButton>
-          <BasicButton asChild>
+          </Button>
+          <Button asChild>
             <Link href="https://github.com/Zynkah" target="_blank">
               GitHub
             </Link>
-          </BasicButton>
+          </Button>
         </CardContent>
         <CardFooter className="justify-center">
           I look forward to hearing from you!

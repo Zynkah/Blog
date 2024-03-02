@@ -1,0 +1,1 @@
+ALTER TABLE "guestbook" RENAME COLUMN "message" TO "guestbookMessage";

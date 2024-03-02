@@ -8,7 +8,7 @@ import AlertMessage from "@/components/alert";
 interface Entries {
   id: string;
   username: string;
-  message: string;
+  guestbookMessage: string;
 }
 
 export default function GuestbookEntries() {
@@ -19,9 +19,11 @@ export default function GuestbookEntries() {
     async function fetchSurveyData() {
       try {
         const response = await fetch("/api/get-guestbook");
+        
         if (response.ok) {
           try {
             const data = await response.json();
+            console.log("API Response Data:", data); 
             setEntries(data.guestbookEntries);
           } catch (error) {
             setAlert({
@@ -52,7 +54,7 @@ export default function GuestbookEntries() {
         <Fragment key={index}>
           <div className="p-3">
             <p className="text-lg">{entry.username}</p>
-            <p>{entry.message}</p>
+            <p>{entry.guestbookMessage}</p>
           </div>
           <Separator key={`separator-${index}`} className="my-2" />
         </Fragment>

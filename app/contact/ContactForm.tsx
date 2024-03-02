@@ -5,12 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import AlertMessage from "@/components/alert";
-import ButtonLoading from "@/components/ui/submit-loading";
-import BasicButton from "@/components/ui/basic-button";
+import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
 
 export function ContactForm() {
   const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("");
+  const [guestbookMessage, setGuestbookMessage] = useState("");
   const [alert, setAlert] = useState({ type: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
@@ -24,7 +24,7 @@ export function ContactForm() {
         method: "POST",
         body: JSON.stringify({
           username,
-          message,
+          guestbookMessage,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export function ContactForm() {
     }
   };
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
+    setGuestbookMessage(e.target.value);
   };
 
   return (
@@ -75,7 +75,7 @@ export function ContactForm() {
         <Textarea
           required
           id="guestbookMessage"
-          value={message}
+          value={guestbookMessage}
           onChange={handleMessageChange}
           placeholder="✶ Leave me a message ✶"
           className="cursor-text resize-y rounded carat-slate-400 opacity-50 focus:opacity-100"
@@ -83,9 +83,16 @@ export function ContactForm() {
         {alert.type && (
           <AlertMessage type={alert.type} message={alert.message} />
         )}
-        <BasicButton type="submit">
-          {submitting ? <ButtonLoading /> : "Submit"}
-        </BasicButton>
+        <Button>
+          {submitting ? (
+            <Button disabled>
+              <Loader2 className="mr-2 hr w-4 animate-spin" />
+              Submitting...
+            </Button>
+          ) : (
+            "Submit"
+          )}
+        </Button>
       </form>
     </div>
   );

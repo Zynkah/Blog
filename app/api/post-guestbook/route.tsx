@@ -4,18 +4,18 @@ import { guestbook } from "@/db/schema";
 import { nanoid } from "nanoid";
 
 export async function POST(req: NextRequest) {
-  const newUser = await req.json();
+  const newEntry = await req.json();
 
-  const newUserObject = {
+  const newEntryObject = {
     id: nanoid(),
-    username: newUser.username,
-    message: newUser.message
+    username: newEntry.username,
+    guestbookMessage: newEntry.guestbookMessage,
   };
 
-  const createUser = await db
-  .insert(guestbook)
-  .values(newUserObject)
-  .returning();
+  const createEntry = await db
+    .insert(guestbook)
+    .values(newEntryObject)
+    .returning();
 
-  return NextResponse.json({ user: createUser });
+  return NextResponse.json({ guestbook: createEntry });
 }
