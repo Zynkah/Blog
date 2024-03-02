@@ -8,6 +8,7 @@ export const user = pgTable("user", {
 });
 
 export const guestbook = pgTable("guestbook", {
+  id: text('id').notNull().primaryKey(),
   username: text("username"),
   message: text("message"),
 });

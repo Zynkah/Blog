@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import AlertMessage from "@/components/alert";
 
 interface Entries {
+  id: string;
   username: string;
   message: string;
 }

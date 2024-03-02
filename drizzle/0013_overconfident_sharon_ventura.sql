@@ -1,0 +1,1 @@
+ALTER TABLE "guestbook" ADD COLUMN "id" text NOT NULL;
